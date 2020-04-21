@@ -3,56 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>ERP Mercado S.A.</title>
+        <h:outputScript name="bootstrap/js/bootstrap.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css"/>
+        <h:outputScript name="bootstrap/js/jquery.js"/>
+        <h:outputStylesheet name="css/menu.css"/>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f7a229cef3.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="/pages/cargo/List" value="Show All Cargo Items"/>
-        <br />
-        <h:link outcome="/pages/categoria/List" value="Show All Categoria Items"/>
-        <br />
-        <h:link outcome="/pages/cliente/List" value="Show All Cliente Items"/>
-        <br />
-        <h:link outcome="/pages/compradetalle/List" value="Show All Compradetalle Items"/>
-        <br />
-        <h:link outcome="/pages/empleado/List" value="Show All Empleado Items"/>
-        <br />
-        <h:link outcome="/pages/facturacompra/List" value="Show All Facturacompra Items"/>
-        <br />
-        <h:link outcome="/pages/facturaventa/List" value="Show All Facturaventa Items"/>
-        <br />
-        <h:link outcome="/pages/ganancia/List" value="Show All Ganancia Items"/>
-        <br />
-        <h:link outcome="/pages/historialtrabajo/List" value="Show All Historialtrabajo Items"/>
-        <br />
-        <h:link outcome="/pages/ordencompra/List" value="Show All Ordencompra Items"/>
-        <br />
-        <h:link outcome="/pages/ordenventa/List" value="Show All Ordenventa Items"/>
-        <br />
-        <h:link outcome="/pages/pagocompra/List" value="Show All Pagocompra Items"/>
-        <br />
-        <h:link outcome="/pages/pagoventa/List" value="Show All Pagoventa Items"/>
-        <br />
-        <h:link outcome="/pages/persona/List" value="Show All Persona Items"/>
-        <br />
-        <h:link outcome="/pages/producto/List" value="Show All Producto Items"/>
-        <br />
-        <h:link outcome="/pages/proveedor/List" value="Show All Proveedor Items"/>
-        <br />
-        <h:link outcome="/pages/rol/List" value="Show All Rol Items"/>
-        <br />
-        <h:link outcome="/pages/tarjetacreditocompra/List" value="Show All Tarjetacreditocompra Items"/>
-        <br />
-        <h:link outcome="/pages/tarjetacreditoventa/List" value="Show All Tarjetacreditoventa Items"/>
-        <br />
-        <h:link outcome="/pages/usuario/List" value="Show All Usuario Items"/>
-        <br />
-        <h:link outcome="/pages/usuariosw/List" value="Show All Usuariosw Items"/>
-        <br />
-        <h:link outcome="/pages/ventadetalle/List" value="Show All Ventadetalle Items"/>
+        <div class="sidebar " style="color: white" >
+            <a><h:link class="fas fa-fw fa-bars" outcome="/index.xhtml" value="Principal"/></a> 
+            <a><h:link class="fas fa-user-plus" outcome="/pages/cargo/List" value=" Cargo"/></a> 
+            <a><h:link class="fas fa-adjust" outcome="/pages/categoria/List" value=" Categorias"/></a> 
+            <a><h:link class="fas fa-user-friends" outcome="/pages/cliente/List" value=" Clientes"/></a>
+            <a><h:link class="fas fa-cart-arrow-down" outcome="/pages/compradetalle/List" value=" Detalle de Compras"/></a> 
+            <a><h:link class="fas fa-cart-arrow-down" outcome="/pages/ventadetalle/List" value=" Detalle de Ventas"/></a> 
+            <a><h:link class="fas fa-briefcase" outcome="/pages/empleado/List" value=" Empleados"/></a>       
+            <a><h:link class="fas fa-money-bill" outcome="/pages/facturacompra/List" value=" Factura Compras"/></a>    
+            <a><h:link class="fas fa-money-bill" outcome="/pages/facturaventa/List" value=" Factura Ventas"/></a>
+            <a><h:link class="fas fa-dollar-sign" outcome="/pages/ganancia/List" value=" Ganancias"/></a>        
+            <a><h:link class="fas fa-file" outcome="/pages/historialtrabajo/List" value=" Historial de Trabajo"/></a> 
+            <a><h:link class="fas fa-border-all" outcome="/pages/ordencompra/List" value=" Orden de Compra"/></a> 
+            <a><h:link class="fas fa-border-all" outcome="/pages/ordenventa/List" value=" Orden de Venta"/></a>  
+            <a><h:link class="fas fa-file-invoice" outcome="/pages/pagocompra/List" value=" Pago de Compras"/></a> 
+            <a><h:link class="fas fa-file-invoice" outcome="/pages/pagoventa/List" value=" Pago de Ventas"/></a>   
+            <a><h:link class="fas fa-user-shield" outcome="/pages/persona/List" value=" Personas"/></a> 
+            <a><h:link class="fas fa-truck" outcome="/pages/proveedor/List" value=" Proveedores" /></a>  
+            <a><h:link class="far fa-address-book" outcome="/pages/rol/List" value=" Roles"/></a> 
+            <a><h:link class="far fa-id-card" outcome="/pages/tarjetacreditocompra/List" value=" Tarjeta de Compras"/></a> 
+            <a><h:link class="far fa-id-card" outcome="/pages/tarjetacreditoventa/List" value=" Tarjeta de Ventas" /></a> 
+            <a><h:link class="fas fa-user" outcome="/pages/usuario/List" value=" Usuarios" /></a> 
+            <a><h:link class="fab fa-aws" outcome="/pages/usuariosw/List" value=" Usuario WS"/></a> 
+        </div> 
+        <div class="main" style="background-color: #ECEAE4 ">
+            <br />
+            <br />
+            <br />
+            <center>
+                <h:graphicImage class="responsive" value = "/resources/images/proveedor.png" /> 
+                <br />
+                <br />
+                <center><h1><span class="badge badge-dark"> ERP Mercado S.A.</span></h1></center>
+                <br />
+            </center>
+        </div>
     </h:body>
+
 
 
 
