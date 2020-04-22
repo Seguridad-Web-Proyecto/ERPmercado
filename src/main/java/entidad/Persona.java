@@ -228,5 +228,5 @@ public class Persona implements Serializable {
     public String toString() {
         return "entidad.Persona[ personaid=" + personaid + " ]";
     }
-    
+
 }

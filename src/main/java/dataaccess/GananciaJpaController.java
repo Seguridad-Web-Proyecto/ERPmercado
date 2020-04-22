@@ -216,5 +216,5 @@ public class GananciaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

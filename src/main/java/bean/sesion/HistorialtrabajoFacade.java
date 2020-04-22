@@ -28,5 +28,5 @@ public class HistorialtrabajoFacade extends AbstractFacade<Historialtrabajo> {
     public HistorialtrabajoFacade() {
         super(Historialtrabajo.class);
     }
-    
+
 }

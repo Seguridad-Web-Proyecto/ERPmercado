@@ -28,5 +28,5 @@ public class TarjetacreditocompraFacade extends AbstractFacade<Tarjetacreditocom
     public TarjetacreditocompraFacade() {
         super(Tarjetacreditocompra.class);
     }
-    
+
 }

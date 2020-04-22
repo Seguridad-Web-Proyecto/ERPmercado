@@ -144,5 +144,5 @@ public class Ventadetalle implements Serializable {
     public String toString() {
         return "entidad.Ventadetalle[ ventadetallePK=" + ventadetallePK + " ]";
     }
-    
+
 }

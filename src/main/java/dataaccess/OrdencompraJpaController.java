@@ -281,5 +281,5 @@ public class OrdencompraJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

@@ -211,5 +211,5 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

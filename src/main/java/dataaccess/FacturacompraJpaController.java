@@ -252,5 +252,5 @@ public class FacturacompraJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

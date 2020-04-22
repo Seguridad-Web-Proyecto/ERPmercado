@@ -79,5 +79,5 @@ public class VentadetallePK implements Serializable {
     public String toString() {
         return "entidad.VentadetallePK[ ventaid=" + ventaid + ", productoid=" + productoid + " ]";
     }
-    
+
 }

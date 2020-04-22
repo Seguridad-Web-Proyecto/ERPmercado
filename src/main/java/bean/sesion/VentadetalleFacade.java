@@ -28,5 +28,5 @@ public class VentadetalleFacade extends AbstractFacade<Ventadetalle> {
     public VentadetalleFacade() {
         super(Ventadetalle.class);
     }
-    
+
 }

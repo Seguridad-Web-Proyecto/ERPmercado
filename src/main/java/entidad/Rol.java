@@ -107,5 +107,5 @@ public class Rol implements Serializable {
     public String toString() {
         return "entidad.Rol[ rolid=" + rolid + " ]";
     }
-    
+
 }

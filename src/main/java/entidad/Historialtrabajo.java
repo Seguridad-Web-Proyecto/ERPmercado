@@ -132,5 +132,5 @@ public class Historialtrabajo implements Serializable {
     public String toString() {
         return "entidad.Historialtrabajo[ historialid=" + historialid + " ]";
     }
-    
+
 }

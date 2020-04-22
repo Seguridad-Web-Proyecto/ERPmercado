@@ -166,5 +166,5 @@ public class Tarjetacreditoventa implements Serializable {
     public String toString() {
         return "entidad.Tarjetacreditoventa[ tarjetacreditoventaid=" + tarjetacreditoventaid + " ]";
     }
-    
+
 }

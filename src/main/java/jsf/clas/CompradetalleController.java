@@ -138,9 +138,9 @@ public class CompradetalleController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage("¡Detalle de compra eliminado con exito!"); 
+            JsfUtil.addSuccessMessage("¡Detalle de compra eliminado con exito!");
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

@@ -107,5 +107,5 @@ public class Categoria implements Serializable {
     public String toString() {
         return "entidad.Categoria[ categoriaid=" + categoriaid + " ]";
     }
-    
+
 }

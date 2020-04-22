@@ -227,5 +227,5 @@ public class Proveedor implements Serializable {
     public String toString() {
         return "entidad.Proveedor[ proveedorid=" + proveedorid + " ]";
     }
-    
+
 }

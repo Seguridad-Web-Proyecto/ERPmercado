@@ -80,7 +80,7 @@ public class TarjetacreditoventaController implements Serializable {
     }
 
     public String create() {
-       try {
+        try {
             getFacade().create(current);
             JsfUtil.addSuccessMessage("¡Tarjeta creada con exito!");
             return prepareCreate();
@@ -133,9 +133,9 @@ public class TarjetacreditoventaController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Tarjeta eliminada con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

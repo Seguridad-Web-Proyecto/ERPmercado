@@ -133,9 +133,9 @@ public class PagoventaController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Pago eliminado con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

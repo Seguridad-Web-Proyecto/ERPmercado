@@ -105,5 +105,5 @@ public class Ganancia implements Serializable {
     public String toString() {
         return "entidad.Ganancia[ gananciaid=" + gananciaid + " ]";
     }
-    
+
 }

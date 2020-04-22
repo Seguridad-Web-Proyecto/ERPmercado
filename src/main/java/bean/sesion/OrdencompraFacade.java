@@ -28,5 +28,5 @@ public class OrdencompraFacade extends AbstractFacade<Ordencompra> {
     public OrdencompraFacade() {
         super(Ordencompra.class);
     }
-    
+
 }

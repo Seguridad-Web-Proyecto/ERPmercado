@@ -223,5 +223,5 @@ public class TarjetacreditocompraJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

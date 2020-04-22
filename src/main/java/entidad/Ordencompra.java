@@ -206,5 +206,5 @@ public class Ordencompra implements Serializable {
     public String toString() {
         return "entidad.Ordencompra[ ordencompraid=" + ordencompraid + " ]";
     }
-    
+
 }

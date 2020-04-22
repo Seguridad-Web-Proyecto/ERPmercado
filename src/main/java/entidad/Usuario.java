@@ -167,5 +167,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "entidad.Usuario[ usuarioid=" + usuarioid + " ]";
     }
-    
+
 }

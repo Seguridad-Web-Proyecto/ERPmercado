@@ -11,47 +11,47 @@
         </ui:define>
         <ui:define name="body">
             <div class="main">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <div style="background-color: white">
-                <br></br>
-                <h4 align="center">Información</h4>
-                <br></br>
-            </div>
-            <br></br>
-            <div style="background-color: white" align="center">
-                <br></br>
-                <h:form>
-                    <h:panelGrid columns="2">
-                        <h:outputText value="Id Cliente: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.clienteid}" title="#{bundle.ViewClienteTitle_clienteid}"/>
-                        <h:outputText value="#{bundle.ViewClienteLabel_empresa}"/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.empresa}" title="#{bundle.ViewClienteTitle_empresa}"/>
-                        <h:outputText value="Nombre de Contacto: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.nombreContacto}" title="#{bundle.ViewClienteTitle_nombreContacto}"/>
-                        <h:outputText value="#{bundle.ViewClienteLabel_area}"/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.area}" title="#{bundle.ViewClienteTitle_area}"/>
-                        <h:outputText value="#{bundle.ViewClienteLabel_telefono}"/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.telefono}" title="#{bundle.ViewClienteTitle_telefono}"/>
-                        <h:outputText value="RFC: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.rfc}" title="#{bundle.ViewClienteTitle_rfc}"/>
-                        <h:outputText value="#{bundle.ViewClienteLabel_email}"/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.email}" title="#{bundle.ViewClienteTitle_email}"/>
-                        <h:outputText value="Status: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.activo}" title="#{bundle.ViewClienteTitle_activo}"/>
-                        <h:outputText value="Pagina Web: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.paginaWeb}" title="#{bundle.ViewClienteTitle_paginaWeb}"/>
-                        <h:outputText value="Domicilio Fiscal: "/>
-                        <h:outputText class="form-control" value="#{clienteController.selected.domicilioFiscal}" title="#{bundle.ViewClienteTitle_domicilioFiscal}"/>
-                    </h:panelGrid>
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <div style="background-color: white">
                     <br></br>
+                    <h4 align="center">Información</h4>
+                    <br></br>
+                </div>
+                <br></br>
+                <div style="background-color: white" align="center">
+                    <br></br>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Id Cliente: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.clienteid}" title="#{bundle.ViewClienteTitle_clienteid}"/>
+                            <h:outputText value="#{bundle.ViewClienteLabel_empresa}"/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.empresa}" title="#{bundle.ViewClienteTitle_empresa}"/>
+                            <h:outputText value="Nombre de Contacto: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.nombreContacto}" title="#{bundle.ViewClienteTitle_nombreContacto}"/>
+                            <h:outputText value="#{bundle.ViewClienteLabel_area}"/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.area}" title="#{bundle.ViewClienteTitle_area}"/>
+                            <h:outputText value="#{bundle.ViewClienteLabel_telefono}"/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.telefono}" title="#{bundle.ViewClienteTitle_telefono}"/>
+                            <h:outputText value="RFC: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.rfc}" title="#{bundle.ViewClienteTitle_rfc}"/>
+                            <h:outputText value="#{bundle.ViewClienteLabel_email}"/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.email}" title="#{bundle.ViewClienteTitle_email}"/>
+                            <h:outputText value="Status: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.activo}" title="#{bundle.ViewClienteTitle_activo}"/>
+                            <h:outputText value="Pagina Web: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.paginaWeb}" title="#{bundle.ViewClienteTitle_paginaWeb}"/>
+                            <h:outputText value="Domicilio Fiscal: "/>
+                            <h:outputText class="form-control" value="#{clienteController.selected.domicilioFiscal}" title="#{bundle.ViewClienteTitle_domicilioFiscal}"/>
+                        </h:panelGrid>
+                        <br></br>
                         <h:commandLink class="btn btn-sm btn-info" action="#{clienteController.prepareList}" value="Aceptar"/>
                         <br></br>
                         <br></br>
-                </h:form>
+                    </h:form>
+                </div>
             </div>
-           </div>
         </ui:define>
     </ui:composition>
 

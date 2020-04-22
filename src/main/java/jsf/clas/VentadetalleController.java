@@ -136,11 +136,11 @@ public class VentadetalleController implements Serializable {
     }
 
     private void performDestroy() {
-       try {
+        try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage("¡Detalle de venta eliminado con exito!"); 
+            JsfUtil.addSuccessMessage("¡Detalle de venta eliminado con exito!");
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

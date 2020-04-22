@@ -79,5 +79,5 @@ public class CompradetallePK implements Serializable {
     public String toString() {
         return "entidad.CompradetallePK[ compraid=" + compraid + ", productoid=" + productoid + " ]";
     }
-    
+
 }

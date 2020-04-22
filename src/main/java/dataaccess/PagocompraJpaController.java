@@ -252,5 +252,5 @@ public class PagocompraJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

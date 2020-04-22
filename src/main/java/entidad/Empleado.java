@@ -146,5 +146,5 @@ public class Empleado implements Serializable {
     public String toString() {
         return "entidad.Empleado[ empleadoid=" + empleadoid + " ]";
     }
-    
+
 }

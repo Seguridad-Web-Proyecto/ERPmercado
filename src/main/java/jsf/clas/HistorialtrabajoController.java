@@ -133,9 +133,9 @@ public class HistorialtrabajoController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Historial eliminado con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

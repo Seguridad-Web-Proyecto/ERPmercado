@@ -228,5 +228,5 @@ public class CompradetalleJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

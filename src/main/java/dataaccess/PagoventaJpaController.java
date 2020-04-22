@@ -252,5 +252,5 @@ public class PagoventaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

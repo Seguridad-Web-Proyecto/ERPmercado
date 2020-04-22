@@ -216,5 +216,5 @@ public class HistorialtrabajoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

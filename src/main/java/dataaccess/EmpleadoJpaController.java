@@ -304,5 +304,5 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

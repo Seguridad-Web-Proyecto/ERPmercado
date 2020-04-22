@@ -152,5 +152,5 @@ public class Pagoventa implements Serializable {
     public String toString() {
         return "entidad.Pagoventa[ pagoventaid=" + pagoventaid + " ]";
     }
-    
+
 }

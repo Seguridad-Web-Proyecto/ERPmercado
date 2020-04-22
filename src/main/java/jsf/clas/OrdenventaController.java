@@ -133,9 +133,9 @@ public class OrdenventaController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Orden de venta eliminada con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

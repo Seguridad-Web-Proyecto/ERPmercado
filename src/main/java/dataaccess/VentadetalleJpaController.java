@@ -228,5 +228,5 @@ public class VentadetalleJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

@@ -97,7 +97,7 @@ public class CategoriaController implements Serializable {
     }
 
     public String update() {
-       try {
+        try {
             getFacade().edit(current);
             JsfUtil.addSuccessMessage("¡Categoria editada con exito!");
             return "List";
@@ -133,9 +133,9 @@ public class CategoriaController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Categoria eliminada con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

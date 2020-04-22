@@ -97,7 +97,7 @@ public class ProductoController implements Serializable {
     }
 
     public String update() {
-         try {
+        try {
             getFacade().edit(current);
             JsfUtil.addSuccessMessage("¡Producto editado con exito!");
             return "List";
@@ -133,9 +133,9 @@ public class ProductoController implements Serializable {
         try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Producto eliminado con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 

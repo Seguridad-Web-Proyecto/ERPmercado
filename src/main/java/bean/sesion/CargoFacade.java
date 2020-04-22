@@ -28,5 +28,5 @@ public class CargoFacade extends AbstractFacade<Cargo> {
     public CargoFacade() {
         super(Cargo.class);
     }
-    
+
 }

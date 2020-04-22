@@ -223,5 +223,5 @@ public class CargoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

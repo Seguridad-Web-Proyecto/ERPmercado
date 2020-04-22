@@ -153,5 +153,5 @@ public class Facturacompra implements Serializable {
     public String toString() {
         return "entidad.Facturacompra[ facturacompraid=" + facturacompraid + " ]";
     }
-    
+
 }

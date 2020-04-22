@@ -252,5 +252,5 @@ public class FacturaventaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

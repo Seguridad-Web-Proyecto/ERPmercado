@@ -157,5 +157,5 @@ public class UsuarioswJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

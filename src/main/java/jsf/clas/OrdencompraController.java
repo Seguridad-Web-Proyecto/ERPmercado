@@ -80,7 +80,7 @@ public class OrdencompraController implements Serializable {
     }
 
     public String create() {
-       try {
+        try {
             getFacade().create(current);
             JsfUtil.addSuccessMessage("¡Orden de compra creada con exito!");
             return prepareCreate();
@@ -130,12 +130,12 @@ public class OrdencompraController implements Serializable {
     }
 
     private void performDestroy() {
-         try {
+        try {
             getFacade().remove(current);
             JsfUtil.addSuccessMessage("¡Orden de compra eliminada con exito!");
-            
+
         } catch (Exception e) {
-          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 
