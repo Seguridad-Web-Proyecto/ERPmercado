@@ -31,11 +31,11 @@
                             <h:inputText class="form-control" id="precioUnitario" value="#{compradetalleController.selected.precioUnitario}" title="#{bundle.EditCompradetalleTitle_precioUnitario}" required="true" requiredMessage="#{bundle.EditCompradetalleRequiredMessage_precioUnitario}"/>
                             <h:outputLabel value="Importe: " for="importe" />
                             <h:inputText class="form-control" id="importe" value="#{compradetalleController.selected.importe}" title="#{bundle.EditCompradetalleTitle_importe}" required="true" requiredMessage="#{bundle.EditCompradetalleRequiredMessage_importe}"/>
-                            <h:outputLabel value="Orden de Compra: }" for="ordencompra" />
+                            <h:outputLabel value="Orden de Compra: " for="ordencompra" />
                             <h:selectOneMenu class="form-control" id="ordencompra" value="#{compradetalleController.selected.ordencompra}" title="#{bundle.EditCompradetalleTitle_ordencompra}" required="true" requiredMessage="#{bundle.EditCompradetalleRequiredMessage_ordencompra}">
                                 <f:selectItems value="#{ordencompraController.itemsAvailableSelectOne}"/>
                             </h:selectOneMenu>
-                            <h:outputLabel value="Producto" for="producto" />
+                            <h:outputLabel value="Id Producto" for="producto" />
                             <h:selectOneMenu class="form-control" id="producto" value="#{compradetalleController.selected.producto}" title="#{bundle.EditCompradetalleTitle_producto}" required="true" requiredMessage="#{bundle.EditCompradetalleRequiredMessage_producto}">
                                 <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
                             </h:selectOneMenu>
