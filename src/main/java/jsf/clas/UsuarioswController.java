@@ -76,17 +76,17 @@ public class UsuarioswController implements Serializable {
     public String prepareCreate() {
         current = new Usuariosw();
         selectedItemIndex = -1;
-        return "Create";
+        return "List";
     }
 
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioswCreated"));
+            JsfUtil.addSuccessMessage("¡Usuario WS creado con exito!");
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
-            return null;
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            return "List";
         }
     }
 
@@ -99,11 +99,11 @@ public class UsuarioswController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioswUpdated"));
-            return "View";
+            JsfUtil.addSuccessMessage("¡Usuario WS editado con exito!");
+            return "List";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
-            return null;
+            JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
+            return "List";
         }
     }
 
@@ -130,11 +130,12 @@ public class UsuarioswController implements Serializable {
     }
 
     private void performDestroy() {
-        try {
+         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioswDeleted"));
+            JsfUtil.addSuccessMessage("¡Usuario WS eliminado con exito!");
+            
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+          JsfUtil.addSuccessMessage("¡Lo sentimos la operación no pudo completarse intente mas tarde!");
         }
     }
 
