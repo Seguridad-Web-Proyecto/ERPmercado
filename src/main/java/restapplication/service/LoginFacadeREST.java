@@ -3,30 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bean.sesion;
+package restapplication.service;
 
-import entidades.Categoria;
+import entidades.Usuariosw;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Saul
+ * @author jcami
  */
 @Stateless
-public class CategoriaFacade extends AbstractFacade<Categoria> {
+public class LoginFacadeREST extends AbstractFacade <Usuariosw>{
 
     @PersistenceContext(unitName = "com.mycompany_Proveedoressw_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
+    public LoginFacadeREST() {
+        super(Usuariosw.class);
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
-
-    public CategoriaFacade() {
-        super(Categoria.class);
-    }
-
+    
 }

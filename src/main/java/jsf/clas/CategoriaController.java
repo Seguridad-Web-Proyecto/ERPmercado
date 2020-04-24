@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Categoria;
+import entidades.Categoria;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.CategoriaFacade;

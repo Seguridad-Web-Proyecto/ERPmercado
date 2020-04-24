@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Ordencompra;
+import entidades.Ordencompra;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.OrdencompraFacade;

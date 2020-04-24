@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidad;
+package entidades;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -26,27 +26,27 @@ import javax.validation.constraints.Size;
  * @author Saul
  */
 @Entity
-@Table(name = "cliente")
+@Table(name = "proveedor")
 @NamedQueries({
-    @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c"),
-    @NamedQuery(name = "Cliente.findByClienteid", query = "SELECT c FROM Cliente c WHERE c.clienteid = :clienteid"),
-    @NamedQuery(name = "Cliente.findByEmpresa", query = "SELECT c FROM Cliente c WHERE c.empresa = :empresa"),
-    @NamedQuery(name = "Cliente.findByNombreContacto", query = "SELECT c FROM Cliente c WHERE c.nombreContacto = :nombreContacto"),
-    @NamedQuery(name = "Cliente.findByArea", query = "SELECT c FROM Cliente c WHERE c.area = :area"),
-    @NamedQuery(name = "Cliente.findByTelefono", query = "SELECT c FROM Cliente c WHERE c.telefono = :telefono"),
-    @NamedQuery(name = "Cliente.findByRfc", query = "SELECT c FROM Cliente c WHERE c.rfc = :rfc"),
-    @NamedQuery(name = "Cliente.findByEmail", query = "SELECT c FROM Cliente c WHERE c.email = :email"),
-    @NamedQuery(name = "Cliente.findByActivo", query = "SELECT c FROM Cliente c WHERE c.activo = :activo"),
-    @NamedQuery(name = "Cliente.findByPaginaWeb", query = "SELECT c FROM Cliente c WHERE c.paginaWeb = :paginaWeb"),
-    @NamedQuery(name = "Cliente.findByDomicilioFiscal", query = "SELECT c FROM Cliente c WHERE c.domicilioFiscal = :domicilioFiscal")})
-public class Cliente implements Serializable {
+    @NamedQuery(name = "Proveedor.findAll", query = "SELECT p FROM Proveedor p"),
+    @NamedQuery(name = "Proveedor.findByProveedorid", query = "SELECT p FROM Proveedor p WHERE p.proveedorid = :proveedorid"),
+    @NamedQuery(name = "Proveedor.findByEmpresa", query = "SELECT p FROM Proveedor p WHERE p.empresa = :empresa"),
+    @NamedQuery(name = "Proveedor.findByNombreContacto", query = "SELECT p FROM Proveedor p WHERE p.nombreContacto = :nombreContacto"),
+    @NamedQuery(name = "Proveedor.findByArea", query = "SELECT p FROM Proveedor p WHERE p.area = :area"),
+    @NamedQuery(name = "Proveedor.findByTelefono", query = "SELECT p FROM Proveedor p WHERE p.telefono = :telefono"),
+    @NamedQuery(name = "Proveedor.findByRfc", query = "SELECT p FROM Proveedor p WHERE p.rfc = :rfc"),
+    @NamedQuery(name = "Proveedor.findByEmail", query = "SELECT p FROM Proveedor p WHERE p.email = :email"),
+    @NamedQuery(name = "Proveedor.findByActivo", query = "SELECT p FROM Proveedor p WHERE p.activo = :activo"),
+    @NamedQuery(name = "Proveedor.findByPaginaWeb", query = "SELECT p FROM Proveedor p WHERE p.paginaWeb = :paginaWeb"),
+    @NamedQuery(name = "Proveedor.findByDomicilioFiscal", query = "SELECT p FROM Proveedor p WHERE p.domicilioFiscal = :domicilioFiscal")})
+public class Proveedor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "clienteid")
-    private Long clienteid;
+    @Column(name = "proveedorid")
+    private Long proveedorid;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -92,18 +92,18 @@ public class Cliente implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "domicilio_fiscal")
     private String domicilioFiscal;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clienteid")
-    private Collection<Ordenventa> ordenventaCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "proveedorid")
+    private Collection<Ordencompra> ordencompraCollection;
 
-    public Cliente() {
+    public Proveedor() {
     }
 
-    public Cliente(Long clienteid) {
-        this.clienteid = clienteid;
+    public Proveedor(Long proveedorid) {
+        this.proveedorid = proveedorid;
     }
 
-    public Cliente(Long clienteid, String empresa, String nombreContacto, String area, String telefono, String rfc, String email, boolean activo, String paginaWeb, String domicilioFiscal) {
-        this.clienteid = clienteid;
+    public Proveedor(Long proveedorid, String empresa, String nombreContacto, String area, String telefono, String rfc, String email, boolean activo, String paginaWeb, String domicilioFiscal) {
+        this.proveedorid = proveedorid;
         this.empresa = empresa;
         this.nombreContacto = nombreContacto;
         this.area = area;
@@ -115,12 +115,12 @@ public class Cliente implements Serializable {
         this.domicilioFiscal = domicilioFiscal;
     }
 
-    public Long getClienteid() {
-        return clienteid;
+    public Long getProveedorid() {
+        return proveedorid;
     }
 
-    public void setClienteid(Long clienteid) {
-        this.clienteid = clienteid;
+    public void setProveedorid(Long proveedorid) {
+        this.proveedorid = proveedorid;
     }
 
     public String getEmpresa() {
@@ -195,29 +195,29 @@ public class Cliente implements Serializable {
         this.domicilioFiscal = domicilioFiscal;
     }
 
-    public Collection<Ordenventa> getOrdenventaCollection() {
-        return ordenventaCollection;
+    public Collection<Ordencompra> getOrdencompraCollection() {
+        return ordencompraCollection;
     }
 
-    public void setOrdenventaCollection(Collection<Ordenventa> ordenventaCollection) {
-        this.ordenventaCollection = ordenventaCollection;
+    public void setOrdencompraCollection(Collection<Ordencompra> ordencompraCollection) {
+        this.ordencompraCollection = ordencompraCollection;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (clienteid != null ? clienteid.hashCode() : 0);
+        hash += (proveedorid != null ? proveedorid.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
+        if (!(object instanceof Proveedor)) {
             return false;
         }
-        Cliente other = (Cliente) object;
-        if ((this.clienteid == null && other.clienteid != null) || (this.clienteid != null && !this.clienteid.equals(other.clienteid))) {
+        Proveedor other = (Proveedor) object;
+        if ((this.proveedorid == null && other.proveedorid != null) || (this.proveedorid != null && !this.proveedorid.equals(other.proveedorid))) {
             return false;
         }
         return true;
@@ -225,7 +225,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "entidad.Cliente[ clienteid=" + clienteid + " ]";
+        return "entidad.Proveedor[ proveedorid=" + proveedorid + " ]";
     }
 
 }

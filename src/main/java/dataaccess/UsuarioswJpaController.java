@@ -7,7 +7,7 @@ package dataaccess;
 
 import dataaccess.exceptions.NonexistentEntityException;
 import dataaccess.exceptions.RollbackFailureException;
-import entidad.Usuariosw;
+import entidades.Usuariosw;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;

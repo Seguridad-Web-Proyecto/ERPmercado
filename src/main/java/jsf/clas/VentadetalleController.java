@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Ventadetalle;
+import entidades.Ventadetalle;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.VentadetalleFacade;
@@ -35,7 +35,7 @@ public class VentadetalleController implements Serializable {
     public Ventadetalle getSelected() {
         if (current == null) {
             current = new Ventadetalle();
-            current.setVentadetallePK(new entidad.VentadetallePK());
+            current.setVentadetallePK(new entidades.VentadetallePK());
             selectedItemIndex = -1;
         }
         return current;
@@ -76,7 +76,7 @@ public class VentadetalleController implements Serializable {
 
     public String prepareCreate() {
         current = new Ventadetalle();
-        current.setVentadetallePK(new entidad.VentadetallePK());
+        current.setVentadetallePK(new entidades.VentadetallePK());
         selectedItemIndex = -1;
         return "List";
     }
@@ -194,7 +194,7 @@ public class VentadetalleController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    public Ventadetalle getVentadetalle(entidad.VentadetallePK id) {
+    public Ventadetalle getVentadetalle(entidades.VentadetallePK id) {
         return ejbFacade.find(id);
     }
 
@@ -214,16 +214,16 @@ public class VentadetalleController implements Serializable {
             return controller.getVentadetalle(getKey(value));
         }
 
-        entidad.VentadetallePK getKey(String value) {
-            entidad.VentadetallePK key;
+        entidades.VentadetallePK getKey(String value) {
+            entidades.VentadetallePK key;
             String values[] = value.split(SEPARATOR_ESCAPED);
-            key = new entidad.VentadetallePK();
+            key = new entidades.VentadetallePK();
             key.setVentaid(Long.parseLong(values[0]));
             key.setProductoid(Long.parseLong(values[1]));
             return key;
         }
 
-        String getStringKey(entidad.VentadetallePK value) {
+        String getStringKey(entidades.VentadetallePK value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value.getVentaid());
             sb.append(SEPARATOR);

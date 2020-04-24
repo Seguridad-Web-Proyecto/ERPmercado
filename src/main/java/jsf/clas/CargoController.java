@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Cargo;
+import entidades.Cargo;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.CargoFacade;

@@ -3,26 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidad;
+package entidades;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -31,15 +23,16 @@ import javax.validation.constraints.Size;
  * @author Saul
  */
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuariosw")
 @NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
-    @NamedQuery(name = "Usuario.findByUsuarioid", query = "SELECT u FROM Usuario u WHERE u.usuarioid = :usuarioid"),
-    @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario"),
-    @NamedQuery(name = "Usuario.findByContrasenia", query = "SELECT u FROM Usuario u WHERE u.contrasenia = :contrasenia"),
-    @NamedQuery(name = "Usuario.findByActivo", query = "SELECT u FROM Usuario u WHERE u.activo = :activo"),
-    @NamedQuery(name = "Usuario.findByFechaCreacion", query = "SELECT u FROM Usuario u WHERE u.fechaCreacion = :fechaCreacion")})
-public class Usuario implements Serializable {
+    @NamedQuery(name = "Usuariosw.findAll", query = "SELECT u FROM Usuariosw u"),
+    @NamedQuery(name = "Usuariosw.findByUsuarioid", query = "SELECT u FROM Usuariosw u WHERE u.usuarioid = :usuarioid"),
+    @NamedQuery(name = "Usuariosw.findByUsuario", query = "SELECT u FROM Usuariosw u WHERE u.usuario = :usuario"),
+    @NamedQuery(name = "Usuariosw.findByContrasenia", query = "SELECT u FROM Usuariosw u WHERE u.contrasenia = :contrasenia"),
+    @NamedQuery(name = "Usuariosw.findByActivo", query = "SELECT u FROM Usuariosw u WHERE u.activo = :activo"),
+    @NamedQuery(name = "Usuariosw.findByEmpresa", query = "SELECT u FROM Usuariosw u WHERE u.empresa = :empresa"),
+    @NamedQuery(name = "Usuariosw.findByRfc", query = "SELECT u FROM Usuariosw u WHERE u.rfc = :rfc")})
+public class Usuariosw implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -49,12 +42,12 @@ public class Usuario implements Serializable {
     private Long usuarioid;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 45)
     @Column(name = "usuario")
     private String usuario;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 45)
     @Column(name = "contrasenia")
     private String contrasenia;
     @Basic(optional = false)
@@ -63,28 +56,29 @@ public class Usuario implements Serializable {
     private boolean activo;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "fecha_creacion")
-    @Temporal(TemporalType.DATE)
-    private Date fechaCreacion;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarioid")
-    private Collection<Empleado> empleadoCollection;
-    @JoinColumn(name = "rolid", referencedColumnName = "rolid")
-    @ManyToOne(optional = false)
-    private Rol rolid;
+    @Size(min = 1, max = 45)
+    @Column(name = "empresa")
+    private String empresa;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 13)
+    @Column(name = "rfc")
+    private String rfc;
 
-    public Usuario() {
+    public Usuariosw() {
     }
 
-    public Usuario(Long usuarioid) {
+    public Usuariosw(Long usuarioid) {
         this.usuarioid = usuarioid;
     }
 
-    public Usuario(Long usuarioid, String usuario, String contrasenia, boolean activo, Date fechaCreacion) {
+    public Usuariosw(Long usuarioid, String usuario, String contrasenia, boolean activo, String empresa, String rfc) {
         this.usuarioid = usuarioid;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
         this.activo = activo;
-        this.fechaCreacion = fechaCreacion;
+        this.empresa = empresa;
+        this.rfc = rfc;
     }
 
     public Long getUsuarioid() {
@@ -119,28 +113,20 @@ public class Usuario implements Serializable {
         this.activo = activo;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
-    public Collection<Empleado> getEmpleadoCollection() {
-        return empleadoCollection;
+    public String getRfc() {
+        return rfc;
     }
 
-    public void setEmpleadoCollection(Collection<Empleado> empleadoCollection) {
-        this.empleadoCollection = empleadoCollection;
-    }
-
-    public Rol getRolid() {
-        return rolid;
-    }
-
-    public void setRolid(Rol rolid) {
-        this.rolid = rolid;
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
     }
 
     @Override
@@ -153,10 +139,10 @@ public class Usuario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usuario)) {
+        if (!(object instanceof Usuariosw)) {
             return false;
         }
-        Usuario other = (Usuario) object;
+        Usuariosw other = (Usuariosw) object;
         if ((this.usuarioid == null && other.usuarioid != null) || (this.usuarioid != null && !this.usuarioid.equals(other.usuarioid))) {
             return false;
         }
@@ -165,7 +151,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "entidad.Usuario[ usuarioid=" + usuarioid + " ]";
+        return "entidad.Usuariosw[ usuarioid=" + usuarioid + " ]";
     }
 
 }

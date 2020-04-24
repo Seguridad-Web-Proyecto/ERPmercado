@@ -5,7 +5,7 @@
  */
 package bean.sesion;
 
-import entidad.Historialtrabajo;
+import entidades.Historialtrabajo;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

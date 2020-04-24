@@ -5,7 +5,7 @@
  */
 package bean.sesion;
 
-import entidad.Proveedor;
+import entidades.Proveedor;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

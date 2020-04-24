@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Compradetalle;
+import entidades.Compradetalle;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.CompradetalleFacade;
@@ -35,7 +35,7 @@ public class CompradetalleController implements Serializable {
     public Compradetalle getSelected() {
         if (current == null) {
             current = new Compradetalle();
-            current.setCompradetallePK(new entidad.CompradetallePK());
+            current.setCompradetallePK(new entidades.CompradetallePK());
             selectedItemIndex = -1;
         }
         return current;
@@ -76,7 +76,7 @@ public class CompradetalleController implements Serializable {
 
     public String prepareCreate() {
         current = new Compradetalle();
-        current.setCompradetallePK(new entidad.CompradetallePK());
+        current.setCompradetallePK(new entidades.CompradetallePK());
         selectedItemIndex = -1;
         return "List";
     }
@@ -194,7 +194,7 @@ public class CompradetalleController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    public Compradetalle getCompradetalle(entidad.CompradetallePK id) {
+    public Compradetalle getCompradetalle(entidades.CompradetallePK id) {
         return ejbFacade.find(id);
     }
 
@@ -214,16 +214,16 @@ public class CompradetalleController implements Serializable {
             return controller.getCompradetalle(getKey(value));
         }
 
-        entidad.CompradetallePK getKey(String value) {
-            entidad.CompradetallePK key;
+        entidades.CompradetallePK getKey(String value) {
+            entidades.CompradetallePK key;
             String values[] = value.split(SEPARATOR_ESCAPED);
-            key = new entidad.CompradetallePK();
+            key = new entidades.CompradetallePK();
             key.setCompraid(Long.parseLong(values[0]));
             key.setProductoid(Long.parseLong(values[1]));
             return key;
         }
 
-        String getStringKey(entidad.CompradetallePK value) {
+        String getStringKey(entidades.CompradetallePK value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value.getCompraid());
             sb.append(SEPARATOR);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidad;
+package entidades;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -22,19 +22,19 @@ import javax.validation.constraints.NotNull;
  * @author Saul
  */
 @Entity
-@Table(name = "ventadetalle")
+@Table(name = "compradetalle")
 @NamedQueries({
-    @NamedQuery(name = "Ventadetalle.findAll", query = "SELECT v FROM Ventadetalle v"),
-    @NamedQuery(name = "Ventadetalle.findByVentaid", query = "SELECT v FROM Ventadetalle v WHERE v.ventadetallePK.ventaid = :ventaid"),
-    @NamedQuery(name = "Ventadetalle.findByProductoid", query = "SELECT v FROM Ventadetalle v WHERE v.ventadetallePK.productoid = :productoid"),
-    @NamedQuery(name = "Ventadetalle.findByCantidad", query = "SELECT v FROM Ventadetalle v WHERE v.cantidad = :cantidad"),
-    @NamedQuery(name = "Ventadetalle.findByPrecioUnitario", query = "SELECT v FROM Ventadetalle v WHERE v.precioUnitario = :precioUnitario"),
-    @NamedQuery(name = "Ventadetalle.findByImporte", query = "SELECT v FROM Ventadetalle v WHERE v.importe = :importe")})
-public class Ventadetalle implements Serializable {
+    @NamedQuery(name = "Compradetalle.findAll", query = "SELECT c FROM Compradetalle c"),
+    @NamedQuery(name = "Compradetalle.findByCompraid", query = "SELECT c FROM Compradetalle c WHERE c.compradetallePK.compraid = :compraid"),
+    @NamedQuery(name = "Compradetalle.findByProductoid", query = "SELECT c FROM Compradetalle c WHERE c.compradetallePK.productoid = :productoid"),
+    @NamedQuery(name = "Compradetalle.findByCantidad", query = "SELECT c FROM Compradetalle c WHERE c.cantidad = :cantidad"),
+    @NamedQuery(name = "Compradetalle.findByPrecioUnitario", query = "SELECT c FROM Compradetalle c WHERE c.precioUnitario = :precioUnitario"),
+    @NamedQuery(name = "Compradetalle.findByImporte", query = "SELECT c FROM Compradetalle c WHERE c.importe = :importe")})
+public class Compradetalle implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected VentadetallePK ventadetallePK;
+    protected CompradetallePK compradetallePK;
     @Basic(optional = false)
     @NotNull
     @Column(name = "cantidad")
@@ -47,37 +47,37 @@ public class Ventadetalle implements Serializable {
     @NotNull
     @Column(name = "importe")
     private long importe;
-    @JoinColumn(name = "ventaid", referencedColumnName = "ordenventaid", insertable = false, updatable = false)
+    @JoinColumn(name = "compraid", referencedColumnName = "ordencompraid", insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    private Ordenventa ordenventa;
+    private Ordencompra ordencompra;
     @JoinColumn(name = "productoid", referencedColumnName = "productoid", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Producto producto;
 
-    public Ventadetalle() {
+    public Compradetalle() {
     }
 
-    public Ventadetalle(VentadetallePK ventadetallePK) {
-        this.ventadetallePK = ventadetallePK;
+    public Compradetalle(CompradetallePK compradetallePK) {
+        this.compradetallePK = compradetallePK;
     }
 
-    public Ventadetalle(VentadetallePK ventadetallePK, int cantidad, int precioUnitario, long importe) {
-        this.ventadetallePK = ventadetallePK;
+    public Compradetalle(CompradetallePK compradetallePK, int cantidad, int precioUnitario, long importe) {
+        this.compradetallePK = compradetallePK;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.importe = importe;
     }
 
-    public Ventadetalle(long ventaid, long productoid) {
-        this.ventadetallePK = new VentadetallePK(ventaid, productoid);
+    public Compradetalle(long compraid, long productoid) {
+        this.compradetallePK = new CompradetallePK(compraid, productoid);
     }
 
-    public VentadetallePK getVentadetallePK() {
-        return ventadetallePK;
+    public CompradetallePK getCompradetallePK() {
+        return compradetallePK;
     }
 
-    public void setVentadetallePK(VentadetallePK ventadetallePK) {
-        this.ventadetallePK = ventadetallePK;
+    public void setCompradetallePK(CompradetallePK compradetallePK) {
+        this.compradetallePK = compradetallePK;
     }
 
     public int getCantidad() {
@@ -104,12 +104,12 @@ public class Ventadetalle implements Serializable {
         this.importe = importe;
     }
 
-    public Ordenventa getOrdenventa() {
-        return ordenventa;
+    public Ordencompra getOrdencompra() {
+        return ordencompra;
     }
 
-    public void setOrdenventa(Ordenventa ordenventa) {
-        this.ordenventa = ordenventa;
+    public void setOrdencompra(Ordencompra ordencompra) {
+        this.ordencompra = ordencompra;
     }
 
     public Producto getProducto() {
@@ -123,18 +123,18 @@ public class Ventadetalle implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (ventadetallePK != null ? ventadetallePK.hashCode() : 0);
+        hash += (compradetallePK != null ? compradetallePK.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ventadetalle)) {
+        if (!(object instanceof Compradetalle)) {
             return false;
         }
-        Ventadetalle other = (Ventadetalle) object;
-        if ((this.ventadetallePK == null && other.ventadetallePK != null) || (this.ventadetallePK != null && !this.ventadetallePK.equals(other.ventadetallePK))) {
+        Compradetalle other = (Compradetalle) object;
+        if ((this.compradetallePK == null && other.compradetallePK != null) || (this.compradetallePK != null && !this.compradetallePK.equals(other.compradetallePK))) {
             return false;
         }
         return true;
@@ -142,7 +142,7 @@ public class Ventadetalle implements Serializable {
 
     @Override
     public String toString() {
-        return "entidad.Ventadetalle[ ventadetallePK=" + ventadetallePK + " ]";
+        return "entidad.Compradetalle[ compradetallePK=" + compradetallePK + " ]";
     }
 
 }

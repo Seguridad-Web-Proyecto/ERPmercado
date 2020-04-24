@@ -5,7 +5,7 @@
  */
 package bean.sesion;
 
-import entidad.Usuariosw;
+import entidades.Usuariosw;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

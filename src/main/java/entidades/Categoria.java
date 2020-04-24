@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidad;
+package entidades;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -26,45 +26,45 @@ import javax.validation.constraints.Size;
  * @author Saul
  */
 @Entity
-@Table(name = "rol")
+@Table(name = "categoria")
 @NamedQueries({
-    @NamedQuery(name = "Rol.findAll", query = "SELECT r FROM Rol r"),
-    @NamedQuery(name = "Rol.findByRolid", query = "SELECT r FROM Rol r WHERE r.rolid = :rolid"),
-    @NamedQuery(name = "Rol.findByNombre", query = "SELECT r FROM Rol r WHERE r.nombre = :nombre")})
-public class Rol implements Serializable {
+    @NamedQuery(name = "Categoria.findAll", query = "SELECT c FROM Categoria c"),
+    @NamedQuery(name = "Categoria.findByCategoriaid", query = "SELECT c FROM Categoria c WHERE c.categoriaid = :categoriaid"),
+    @NamedQuery(name = "Categoria.findByNombre", query = "SELECT c FROM Categoria c WHERE c.nombre = :nombre")})
+public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "rolid")
-    private Integer rolid;
+    @Column(name = "categoriaid")
+    private Long categoriaid;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 45)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolid")
-    private Collection<Usuario> usuarioCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoriaid")
+    private Collection<Producto> productoCollection;
 
-    public Rol() {
+    public Categoria() {
     }
 
-    public Rol(Integer rolid) {
-        this.rolid = rolid;
+    public Categoria(Long categoriaid) {
+        this.categoriaid = categoriaid;
     }
 
-    public Rol(Integer rolid, String nombre) {
-        this.rolid = rolid;
+    public Categoria(Long categoriaid, String nombre) {
+        this.categoriaid = categoriaid;
         this.nombre = nombre;
     }
 
-    public Integer getRolid() {
-        return rolid;
+    public Long getCategoriaid() {
+        return categoriaid;
     }
 
-    public void setRolid(Integer rolid) {
-        this.rolid = rolid;
+    public void setCategoriaid(Long categoriaid) {
+        this.categoriaid = categoriaid;
     }
 
     public String getNombre() {
@@ -75,29 +75,29 @@ public class Rol implements Serializable {
         this.nombre = nombre;
     }
 
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
+    public Collection<Producto> getProductoCollection() {
+        return productoCollection;
     }
 
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
+    public void setProductoCollection(Collection<Producto> productoCollection) {
+        this.productoCollection = productoCollection;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (rolid != null ? rolid.hashCode() : 0);
+        hash += (categoriaid != null ? categoriaid.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Rol)) {
+        if (!(object instanceof Categoria)) {
             return false;
         }
-        Rol other = (Rol) object;
-        if ((this.rolid == null && other.rolid != null) || (this.rolid != null && !this.rolid.equals(other.rolid))) {
+        Categoria other = (Categoria) object;
+        if ((this.categoriaid == null && other.categoriaid != null) || (this.categoriaid != null && !this.categoriaid.equals(other.categoriaid))) {
             return false;
         }
         return true;
@@ -105,7 +105,7 @@ public class Rol implements Serializable {
 
     @Override
     public String toString() {
-        return "entidad.Rol[ rolid=" + rolid + " ]";
+        return "entidad.Categoria[ categoriaid=" + categoriaid + " ]";
     }
 
 }

@@ -5,7 +5,7 @@
  */
 package bean.sesion;
 
-import entidad.Facturaventa;
+import entidades.Facturaventa;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

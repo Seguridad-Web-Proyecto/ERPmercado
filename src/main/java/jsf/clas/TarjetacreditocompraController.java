@@ -1,6 +1,6 @@
 package jsf.clas;
 
-import entidad.Tarjetacreditocompra;
+import entidades.Tarjetacreditocompra;
 import jsf.clas.util.JsfUtil;
 import jsf.clas.util.PaginationHelper;
 import bean.sesion.TarjetacreditocompraFacade;
