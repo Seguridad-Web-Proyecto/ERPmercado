@@ -73,6 +73,12 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
+                                    <h:outputText value="Id Persona "/>
+                                </f:facet>
+                                <h:outputText value="#{item.persona}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
                                     <h:outputText value="Acciones"/>
                                 </f:facet>
                                 <h:commandLink class="btn btn-sm btn-outline-info fas fa-eye" action="#{empleadoController.prepareView}"  />
@@ -101,15 +107,19 @@
                                 <div align="center" >
                                     <h:panelGrid columns="2">
                                         <h:outputLabel value="Fecha de Vinculo: " for="fechaVinculo" />
-                                        <h:inputText class="form-control" id="fechaVinculo" value="#{empleadoController.selected.fechaVinculo}" title="#{bundle.CreateEmpleadoTitle_fechaVinculo}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_fechaVinculo}">
+                                        <h:inputText id="fechaVinculo" value="#{empleadoController.selected.fechaVinculo}" title="#{bundle.CreateEmpleadoTitle_fechaVinculo}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_fechaVinculo}">
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
                                         </h:inputText>
                                         <h:outputLabel value="Fecha de Retiro: " for="fechaRetiro" />
-                                        <h:inputText class="form-control" id="fechaRetiro" value="#{empleadoController.selected.fechaRetiro}" title="#{bundle.CreateEmpleadoTitle_fechaRetiro}" >
+                                        <h:inputText id="fechaRetiro" value="#{empleadoController.selected.fechaRetiro}" title="#{bundle.CreateEmpleadoTitle_fechaRetiro}" >
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
                                         </h:inputText>
+                                        <h:outputLabel value="Persona: " for="persona" />
+                                        <h:selectOneMenu id="persona" value="#{empleadoController.selected.persona}" title="#{bundle.CreateEmpleadoTitle_persona}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_persona}">
+                                            <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
                                         <h:outputLabel value="Usuario id: " for="usuarioid" />
-                                        <h:selectOneMenu class="form-control" id="usuarioid" value="#{empleadoController.selected.usuarioid}" title="#{bundle.CreateEmpleadoTitle_usuarioid}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_usuarioid}">
+                                        <h:selectOneMenu id="usuarioid" value="#{empleadoController.selected.usuarioid}" title="#{bundle.CreateEmpleadoTitle_usuarioid}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_usuarioid}">
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
                                     </h:panelGrid>
