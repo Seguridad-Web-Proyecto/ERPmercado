@@ -151,7 +151,9 @@
                                         <h:outputLabel value="Status: " for="activo" />
                                         <h:inputText id="activo" value="#{clienteController.selected.activo}" title="#{bundle.CreateClienteTitle_activo}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_activo}"/>
                                         <h:outputLabel value="Pagina Web: " for="paginaWeb" />
-                                        <h:inputText id="paginaWeb" value="#{clienteController.selected.paginaWeb}" title="#{bundle.CreateClienteTitle_paginaWeb}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_paginaWeb}"/>
+                                        <h:inputText id="paginaWeb" value="#{clienteController.selected.paginaWeb}" title="#{bundle.CreateClienteTitle_paginaWeb}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_paginaWeb}">
+                                            <f:validator validatorId="urlValidator" />
+                                        </h:inputText>
                                         <h:outputLabel value="Domicilio Fiscal: " for="domicilioFiscal" />
                                         <h:inputText id="domicilioFiscal" value="#{clienteController.selected.domicilioFiscal}" title="#{bundle.CreateClienteTitle_domicilioFiscal}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_domicilioFiscal}"/>
                                     </h:panelGrid>

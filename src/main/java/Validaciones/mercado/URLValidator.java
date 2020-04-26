@@ -20,7 +20,7 @@ import javax.faces.validator.ValidatorException;
 public class URLValidator implements Validator
 {
 
-    private static final String URL_PATTERN = "/^(https?:\\\\/\\\\/)?([\\\\da-z\\\\.-]+)\\\\.([a-z\\\\.]{2,6})([\\\\/\\\\w \\\\.-]*)*\\\\/?$/";
+    private static final String URL_PATTERN = "^(http://|https://)(([a-z0-9]([-a-z0-9]*[a-z0-9]+)?){1,63}\\.)+[a-z]{2,6}";
 
     private final Pattern pattern;
     private Matcher matcher;
