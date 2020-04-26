@@ -85,7 +85,9 @@
                                 <div align="center" >
                                     <h:panelGrid columns="2">
                                         <h:outputLabel value="Nombre de Categoria: " for="nombre" />
-                                        <h:inputText id="nombre" value="#{categoriaController.selected.nombre}" title="#{bundle.CreateCategoriaTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCategoriaRequiredMessage_nombre}"/>
+                                        <h:inputText id="nombre" value="#{categoriaController.selected.nombre}" title="#{bundle.CreateCategoriaTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCategoriaRequiredMessage_nombre}">
+                                                <f:validator validatorId="letrasValidator" />
+                                        </h:inputText> 
                                     </h:panelGrid>
                                     <br></br>
                                     <h:commandLink class="btn btn-sm btn-success" value="Guardar" action="#{categoriaController.create()}" />

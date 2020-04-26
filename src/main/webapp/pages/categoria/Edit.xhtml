@@ -26,7 +26,9 @@
                     <h:form>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Nombre de categoria: " for="nombre" />
-                            <h:inputText class="form-control" id="nombre" value="#{categoriaController.selected.nombre}" title="#{bundle.EditCategoriaTitle_nombre}" required="true" requiredMessage="#{bundle.EditCategoriaRequiredMessage_nombre}"/>
+                            <h:inputText class="form-control" id="nombre" value="#{categoriaController.selected.nombre}" title="#{bundle.EditCategoriaTitle_nombre}" required="true" requiredMessage="#{bundle.EditCategoriaRequiredMessage_nombre}">
+                                    <f:validator validatorId="letrasValidator" />
+                                        </h:inputText> 
                         </h:panelGrid>
                         <br />
                         <h:commandLink class="btn btn-sm btn-info" action="#{categoriaController.update}" value="Aceptar"/>
