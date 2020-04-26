@@ -20,7 +20,7 @@ import javax.faces.validator.ValidatorException;
 public class NumerosValidator implements Validator
 {
 
-    private static final String NUMEROS_PATTERN = "/^[+]?([1-9][0-9](?:[\\.][0-9])?|0*\\.0*[1-9][0-9]*)(?:[eE][+-][0-9]+)?$/";
+    private static final String NUMEROS_PATTERN = "([0-9]+.[0-9]+)|([0-9]+)$";
 
     private final Pattern pattern;
     private Matcher matcher;
