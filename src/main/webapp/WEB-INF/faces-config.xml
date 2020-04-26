@@ -74,8 +74,5 @@
         <validator-id>sexoValidator</validator-id>
         <validator-class>Validaciones.mercado.SexoValidator</validator-class>
     </validator>
-     <validator>
-        <validator-id>porcentajeValidator</validator-id>
-        <validator-class>Validaciones.mercado.PorcentajeValidator</validator-class>
-    </validator>
+   
 </faces-config>
