@@ -17,17 +17,17 @@ import javax.faces.validator.ValidatorException;
  *
  * @author Dann
  */
-public class URLValidator implements Validator
+public class PorcentajeValidator implements Validator
 {
 
-    private static final String URL_PATTERN = "/^((100(\.0{1,2})?)|(\d{1,2}(\.\d{1,2})?))$/";
+    private static final String PORCENTAJE_PATTERN = "/^((100(\.0{1,2})?)|(\d{1,2}(\.\d{1,2})?))$/";
 
     private final Pattern pattern;
     private Matcher matcher;
 
-    public URLValidator()
+    public PorcentajeValidator()
     {
-        pattern = Pattern.compile(URL_PATTERN);
+        pattern = Pattern.compile(PORCENTAJE_PATTERN);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class URLValidator implements Validator
         if (!matcher.matches())
         {
 
-            FacesMessage msg = new FacesMessage("Error... URL no válido", "Invalid format..");
+            FacesMessage msg = new FacesMessage("Error... porcentaje no válido", "Invalid format..");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }
