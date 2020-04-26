@@ -25,14 +25,27 @@
                     <br></br>
                     <h:form>
                         <h:panelGrid columns="2">
+
                             <h:outputLabel value="#{bundle.EditProductoLabel_nombre}" for="nombre" />
-                            <h:inputText class="form-control" id="nombre" value="#{productoController.selected.nombre}" title="#{bundle.EditProductoTitle_nombre}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_nombre}"/>
+                            <h:inputText class="form-control" id="nombre" value="#{productoController.selected.nombre}" title="#{bundle.EditProductoTitle_nombre}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_nombre}">
+                                <f:validator validatorId="letrasValidator"/>
+                            </h:inputText>
+
                             <h:outputLabel value="#{bundle.EditProductoLabel_descripcion}" for="descripcion" />
-                            <h:inputText class="form-control" id="descripcion" value="#{productoController.selected.descripcion}" title="#{bundle.EditProductoTitle_descripcion}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_descripcion}"/>
+                            <h:inputText class="form-control" id="descripcion" value="#{productoController.selected.descripcion}" title="#{bundle.EditProductoTitle_descripcion}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_descripcion}">
+                                <f:validator validatorId="letrasValidator"/>
+                            </h:inputText>
+
                             <h:outputLabel value="Unidad de Medida: " for="unidadMedida" />
-                            <h:inputText class="form-control" id="unidadMedida" value="#{productoController.selected.unidadMedida}" title="#{bundle.EditProductoTitle_unidadMedida}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_unidadMedida}"/>
+                            <h:inputText class="form-control" id="unidadMedida" value="#{productoController.selected.unidadMedida}" title="#{bundle.EditProductoTitle_unidadMedida}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_unidadMedida}">
+                                <f:validator validatorId="letrasValidator"/>
+                            </h:inputText>
+
                             <h:outputLabel value="Precio Unitario: " for="precioUnitario" />
-                            <h:inputText class="form-control" id="precioUnitario" value="#{productoController.selected.precioUnitario}" title="#{bundle.EditProductoTitle_precioUnitario}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_precioUnitario}"/>
+                            <h:inputText class="form-control" id="precioUnitario" value="#{productoController.selected.precioUnitario}" title="#{bundle.EditProductoTitle_precioUnitario}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_precioUnitario}">
+                                <f:validator validatorId="numerosValidator"/>
+                            </h:inputText>
+
                             <h:outputLabel value="Categoria: " for="categoriaid" />
                             <h:selectOneMenu class="form-control" id="categoriaid" value="#{productoController.selected.categoriaid}" title="#{bundle.EditProductoTitle_categoriaid}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_categoriaid}">
                                 <f:selectItems value="#{categoriaController.itemsAvailableSelectOne}"/>
