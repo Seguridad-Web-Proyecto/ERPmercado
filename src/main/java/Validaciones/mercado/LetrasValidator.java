@@ -17,29 +17,28 @@ import javax.faces.validator.ValidatorException;
  *
  * @author Dann
  */
-public class EmailValidator implements Validator
+public class LetrasValidator implements Validator
 {
 
-    private static final String EMAIL_PATTERN = "^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$";
+    private static final String LETRAS_PATTERN = "/^[A-Za-z _]*[A-Za-z][A-Za-z _]*$/";
 
     private final Pattern pattern;
     private Matcher matcher;
 
-    public EmailValidator()
+    public LetrasValidator()
     {
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        pattern = Pattern.compile(LETRAS_PATTERN);
     }
 
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException
     {
-        matcher = pattern.matcher(value.toString());
-        if (!matcher.matches())
-        {
+         matcher= pattern.matcher(value.toString());
+	if(!matcher.matches()) {
 
-            FacesMessage msg = new FacesMessage("Error... E-mail no válido", "Invalid email format..");
-            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-            throw new ValidatorException(msg);
+        FacesMessage msg=new FacesMessage("Solo acepta letras", "Invalid  format..");
+	msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+	throw new ValidatorException(msg);
         }
     }
 

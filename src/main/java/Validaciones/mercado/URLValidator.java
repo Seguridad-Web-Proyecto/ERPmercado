@@ -17,17 +17,17 @@ import javax.faces.validator.ValidatorException;
  *
  * @author Dann
  */
-public class EmailValidator implements Validator
+public class URLValidator implements Validator
 {
 
-    private static final String EMAIL_PATTERN = "^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$";
+    private static final String URL_PATTERN = "/^(https?:\\\\/\\\\/)?([\\\\da-z\\\\.-]+)\\\\.([a-z\\\\.]{2,6})([\\\\/\\\\w \\\\.-]*)*\\\\/?$/";
 
     private final Pattern pattern;
     private Matcher matcher;
 
-    public EmailValidator()
+    public URLValidator()
     {
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        pattern = Pattern.compile(URL_PATTERN);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class EmailValidator implements Validator
         if (!matcher.matches())
         {
 
-            FacesMessage msg = new FacesMessage("Error... E-mail no válido", "Invalid email format..");
+            FacesMessage msg = new FacesMessage("Error... URL no válido", "Invalid format..");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }

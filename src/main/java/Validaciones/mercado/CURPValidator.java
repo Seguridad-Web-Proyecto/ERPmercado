@@ -17,17 +17,17 @@ import javax.faces.validator.ValidatorException;
  *
  * @author Dann
  */
-public class EmailValidator implements Validator
+public class CURPValidator implements Validator
 {
 
-    private static final String EMAIL_PATTERN = "^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$";
+    private static final String CURP_PATTERN = "/^([A-Z][AEIOUX][A-Z]{2}\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\\d])(\\d)$/";
 
     private final Pattern pattern;
     private Matcher matcher;
 
-    public EmailValidator()
+    public CURPValidator()
     {
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        pattern = Pattern.compile(CURP_PATTERN);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class EmailValidator implements Validator
         if (!matcher.matches())
         {
 
-            FacesMessage msg = new FacesMessage("Error... E-mail no válido", "Invalid email format..");
+            FacesMessage msg = new FacesMessage("Error... CURP no válido", "Invalid format..");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }

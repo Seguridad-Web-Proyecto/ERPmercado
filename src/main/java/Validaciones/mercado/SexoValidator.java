@@ -17,17 +17,17 @@ import javax.faces.validator.ValidatorException;
  *
  * @author Dann
  */
-public class EmailValidator implements Validator
+public class SexoValidator implements Validator
 {
 
-    private static final String EMAIL_PATTERN = "^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$";
+    private static final String SEXO_PATTERN = "/^(H|M)*$";
 
     private final Pattern pattern;
     private Matcher matcher;
 
-    public EmailValidator()
+    public SexoValidator()
     {
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        pattern = Pattern.compile(SEXO_PATTERN);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class EmailValidator implements Validator
         if (!matcher.matches())
         {
 
-            FacesMessage msg = new FacesMessage("Error... E-mail no válido", "Invalid email format..");
+            FacesMessage msg = new FacesMessage("Error... Sexo no válido", "Invalid format..");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }
