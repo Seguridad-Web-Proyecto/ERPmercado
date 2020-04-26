@@ -20,11 +20,7 @@ import javax.faces.validator.ValidatorException;
 public class LetrasValidator implements Validator
 {
 
-    private static final String LETRAS_PATTERN = "/^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$/\n" +
-"\n" +
-"and\n" +
-"\n" +
-"/^[\\u00F1A-Za-z _]*[\\u00F1A-Za-z][\\u00F1A-Za-z _]*$/";
+    private static final String LETRAS_PATTERN = "[a-zA-Z ]*$";
 
     private final Pattern pattern;
     private Matcher matcher;
