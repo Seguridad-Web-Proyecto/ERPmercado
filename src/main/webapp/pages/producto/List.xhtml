@@ -109,8 +109,10 @@
                                 <div align="center" >
                                     <h:panelGrid columns="2">
                                         <h:outputLabel value="#{bundle.CreateProductoLabel_nombre}" for="nombre" />
-                                        <h:inputText class="form-control" id="nombre" value="#{productoController.selected.nombre}" title="#{bundle.CreateProductoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_nombre}"/>
+                                        <h:inputText class="form-control" id="nombre" value="#{productoController.selected.nombre}" title="#{bundle.CreateProductoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_nombre}">
+                                        <f:validator validatorId="letrasValidator"/>
                                         <h:outputLabel value="#{bundle.CreateProductoLabel_descripcion}" for="descripcion" />
+                                        
                                         <h:inputText class="form-control" id="descripcion" value="#{productoController.selected.descripcion}" title="#{bundle.CreateProductoTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_descripcion}"/>
                                         <h:outputLabel value="Unidad de Medida" for="unidadMedida" />
                                         <h:inputText class="form-control" id="unidadMedida" value="#{productoController.selected.unidadMedida}" title="#{bundle.CreateProductoTitle_unidadMedida}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_unidadMedida}"/>
