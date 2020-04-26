@@ -139,7 +139,9 @@
                                                <f:validator validatorId="letrasValidator" />
                                         </h:inputText> 
                                         <h:outputLabel value="Area: " for="area" />
-                                        <h:inputText id="area" value="#{clienteController.selected.area}" title="#{bundle.CreateClienteTitle_area}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_area}"/>
+                                        <h:inputText id="area" value="#{clienteController.selected.area}" title="#{bundle.CreateClienteTitle_area}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_area}">
+                                                <f:validator validatorId="letrasValidator" />
+                                        </h:inputText> 
                                         <h:outputLabel value="Telefono:" for="telefono" />
                                         <h:inputText id="telefono" value="#{clienteController.selected.telefono}" title="#{bundle.CreateClienteTitle_telefono}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_telefono}">
                                                 <f:validator validatorId="telefonoValidator" />
