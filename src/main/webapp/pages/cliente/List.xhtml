@@ -135,11 +135,16 @@
                                         <h:outputLabel value="Empresa: " for="empresa" />
                                         <h:inputText id="empresa" value="#{clienteController.selected.empresa}" title="#{bundle.CreateClienteTitle_empresa}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_empresa}"/>
                                         <h:outputLabel value="Nombre de contacto: " for="nombreContacto" />
-                                        <h:inputText id="nombreContacto" value="#{clienteController.selected.nombreContacto}" title="#{bundle.CreateClienteTitle_nombreContacto}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_nombreContacto}"/>
+                                        <h:inputText id="nombreContacto" value="#{clienteController.selected.nombreContacto}" title="#{bundle.CreateClienteTitle_nombreContacto}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_nombreContacto}">
+                                        
+                                               <f:validator validatorId="letrasValidator" />
+                                        </h:inputText> 
                                         <h:outputLabel value="Area: " for="area" />
                                         <h:inputText id="area" value="#{clienteController.selected.area}" title="#{bundle.CreateClienteTitle_area}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_area}"/>
                                         <h:outputLabel value="Telefono:" for="telefono" />
-                                        <h:inputText id="telefono" value="#{clienteController.selected.telefono}" title="#{bundle.CreateClienteTitle_telefono}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_telefono}"/>
+                                        <h:inputText id="telefono" value="#{clienteController.selected.telefono}" title="#{bundle.CreateClienteTitle_telefono}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_telefono}">
+                                                <f:validator validatorId="telefonoValidator" />
+                                        </h:inputText>
                                         <h:outputLabel value="RFC: " for="rfc" />
                                         <h:inputText id="rfc" value="#{clienteController.selected.rfc}" title="#{bundle.CreateClienteTitle_rfc}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_rfc}">
                                             <f:validator validatorId="rfcValidator" />
@@ -155,7 +160,9 @@
                                             <f:validator validatorId="urlValidator" />
                                         </h:inputText>
                                         <h:outputLabel value="Domicilio Fiscal: " for="domicilioFiscal" />
-                                        <h:inputText id="domicilioFiscal" value="#{clienteController.selected.domicilioFiscal}" title="#{bundle.CreateClienteTitle_domicilioFiscal}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_domicilioFiscal}"/>
+                                        <h:inputText id="domicilioFiscal" value="#{clienteController.selected.domicilioFiscal}" title="#{bundle.CreateClienteTitle_domicilioFiscal}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_domicilioFiscal}">
+                                     
+                                        </h:inputText>        
                                     </h:panelGrid>
                                     <br></br>
                                     <h:commandLink class="btn btn-sm btn-success" value="Guardar" action="#{clienteController.create()}" />
