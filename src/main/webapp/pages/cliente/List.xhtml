@@ -143,7 +143,9 @@
                                         <h:outputLabel value="RFC: " for="rfc" />
                                         <h:inputText id="rfc" value="#{clienteController.selected.rfc}" title="#{bundle.CreateClienteTitle_rfc}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_rfc}"/>
                                         <h:outputLabel value="Correo Electronico: " for="email" />
-                                        <h:inputText id="email" value="#{clienteController.selected.email}" title="#{bundle.CreateClienteTitle_email}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_email}"/>
+                                        <h:inputText id="email" value="#{clienteController.selected.email}" title="#{bundle.CreateClienteTitle_email}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_email}">
+                                            <f:validator validatorId="emailValidator" />
+                                        </h:inputText>
                                         <h:outputLabel value="Status: " for="activo" />
                                         <h:inputText id="activo" value="#{clienteController.selected.activo}" title="#{bundle.CreateClienteTitle_activo}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_activo}"/>
                                         <h:outputLabel value="Pagina Web: " for="paginaWeb" />
