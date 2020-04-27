@@ -20,7 +20,7 @@ import javax.faces.validator.ValidatorException;
 public class SexoValidator implements Validator
 {
 
-    private static final String SEXO_PATTERN = "/^(H|M)*$";
+    private static final String SEXO_PATTERN = "(H|M)$";
 
     private final Pattern pattern;
     private Matcher matcher;
