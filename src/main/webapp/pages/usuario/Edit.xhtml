@@ -33,7 +33,7 @@
                             <h:inputText class="form-control" id="activo" value="#{usuarioController.selected.activo}" title="#{bundle.EditUsuarioTitle_activo}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_activo}"/>
                             <h:outputLabel value="Fecha de creacion:" for="fechaCreacion" />
                             <h:inputText class="form-control" id="fechaCreacion" value="#{usuarioController.selected.fechaCreacion}" title="#{bundle.EditUsuarioTitle_fechaCreacion}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_fechaCreacion}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:inputText>
                             <h:outputLabel value="Rol: " for="rolid" />
                             <h:selectOneMenu class="form-control" id="rolid" value="#{usuarioController.selected.rolid}" title="#{bundle.EditUsuarioTitle_rolid}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_rolid}">

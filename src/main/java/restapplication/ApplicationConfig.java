@@ -35,10 +35,10 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(restapplication.HelloRESTController.class);
         resources.add(restapplication.service.CategoriaFacadeREST.class);
-        resources.add(restapplication.service.ProductoFacadeREST.class);
         resources.add(restapplication.service.FacturaventaFacadeREST.class);
         resources.add(restapplication.service.OrdenventaFacadeREST.class);
         resources.add(restapplication.service.PagoventaFacadeREST.class);
+        resources.add(restapplication.service.ProductoFacadeREST.class);
         resources.add(restapplication.service.UsuarioswFacadeREST.class);
     }
     

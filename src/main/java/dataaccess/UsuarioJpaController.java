@@ -252,5 +252,21 @@ public class UsuarioJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Usuario findByUser(String login) {
+        Usuario user = null;
+        List<Usuario> users;
+        EntityManager em = getEntityManager();
+        
+        Query consulta = em.createNamedQuery("Usuario.findByUsuario");
+        consulta.setParameter("usuario", login);
+        users = consulta.getResultList();
+
+        if (!users.isEmpty()) {
+
+            user = users.get(0);
+        }
+        return user;
+    }
 
 }
